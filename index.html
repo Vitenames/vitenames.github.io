@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ViteNS</title>
+        <script src="assets/qr.min.js"></script>
+        <script src="assets/vite/vite.js"></script>
+        <script src="assets/vite/vite-ws.js"></script>
+        <script src="assets/polyfill/buffer.js"></script>
+        <script src="assets/bytes32.js"></script>
+        <script src="assets/index.js"></script>
+
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/toast.css">
+    </head>
+    <body>
+        <div style='position: absolute; top: 2%; right: 2%; cursor: pointer;' onselectstart="return false"><span id="blockHeight_icon">&#9634;</span> <span id="blockHeight" class="monospace">0</span></div>
+
+        <div id="nameResult" class="modal">
+            <div class="modal-content">
+                <h2 class="center" id="loadingText">Loading</h2>
+                <h3 class="center" id="nameShow_" style="display:none;">
+                    About name: <span id="nameShow" class="monospace"></span>
+                </h3>
+
+                <h5 style="display:none;" id="nameTargetView_">
+                    Targets: <span id="nameTargetView" class="monospace">Loading...</span>
+                </h5>
+
+                <h5 style="display:none;" id="nameSlotView_">
+                    Slot of NFT: <span id="nameSlotView" class="monospace">Loading...</span>
+                </h5>
+
+                <h5 style="display:none;" id="nameTagsView_">
+                    <span id="nameTagsView" class="monospace">Loading...</span>
+                </h5>
+
+                <div class="separate">
+                    <div class="center" id="mintingArea">
+                        <span class="monospace">For minting:</span>
+                        <div id="qrMinting" class="qr"></div>
+                    </div>
+                </div>
+
+                <button class="button" id="ownerTools">Show owner tools</button>
+
+                <div class="separate">
+                    <div class="center" id="transferingArea">
+                        <span class="monospace">For transfering:</span>
+                        <div id="qrTransfering" class="qr" style="cursor: pointer;"></div>
+                        <div class="margin-20"></div>
+                        <input type="text" id="transferingArea_transferAddress" placeholder="Vite address">
+                    </div>
+                    <div class="center" id="editingArea">
+                        <span class="monospace">Edit tag:</span>
+                        <div id="qrEditing" class="qr" style="cursor: pointer;"></div>
+                        <div class="margin-20"></div>
+                        <input type="text" id="editingArea_tagId" placeholder="Tag ID [0-4]">
+                        <div></div>
+                        <input type="text" id="editingArea_value" placeholder="Value">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="center">
+            <div class="margin-100"></div>
+            <h1>Vite<span class="ns">NS</span></h1>
+            <div class="margin-50"></div>
+            <input id="searchForName" class="name-box" autocomplete="false" maxlength="18" placeholder="Search for a name" required>
+            <div class="margin-50"></div>
+            <h3>
+                Total minted names: <span id="nameCount" class="monospace">Loading...</span>
+            </h3>
+            <div class="margin-100"></div>
+            <div>
+                <h3>Contract Address</h3>
+                <p id="contractAddress" class="monospace">Loading...</p>
+            </div>
+            <h5>Everything is based on trustless smart contracts.</h5>
+            <div class="footer">
+                <h6>The ViteNS protocol and access to the protocol is provided "AS IS", at your own risk, and without warranties of any kind. ViteNS not associated with Vitelabs.</h6>  
+            </div>
+        </div>
+
+        <div id="toast"><div id="desc"></div></div>
+    </body>
+</html>
